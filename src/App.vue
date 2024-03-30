@@ -9,15 +9,30 @@
 				/>
 			</div>
 
-			<el-button type="danger">Search</el-button>
+			<el-button @click="getAvatar" type="danger">Search</el-button>
 		</div>
+		<div>{{}}</div>
 	</header>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import axios from 'axios';
+import { onMounted, ref } from 'vue';
+// let githubUrl = `https://avatars.github.com/${input}.png`;
 
 let input = ref('');
+
+const getAvatar = async () => {
+	let githubUrl = `https://api.github.com/users/${input}`;
+	await fetch(githubUrl)
+		.then(res => res.json())
+		.then(data => {
+			console.log(data);
+		})
+		.catch(e => {
+			console.log(e);
+		});
+};
 </script>
 
 <style lang="scss" scoped></style>
