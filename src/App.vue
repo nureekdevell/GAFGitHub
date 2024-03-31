@@ -44,14 +44,12 @@
 
 					<h1
 						v-if="results.bio"
-						class="font-normal text-gray-900 text-4xl md:text-7xl leading-none mb-8"
+						class="font-normal text-gray-900 text-2xl md:text-3xl leading-none mb-8"
 					>
-						{{ results.bio }}
+						{{ results.bio }}>>
 					</h1>
 
 					<p class="font-normal text-gray-600 text-md md:text-xl mb-16">
-						I have a passion for software. I enjoy creating tools that make life
-						easier for people.
 						<span v-if="results.location">{{ results.location }}</span>
 					</p>
 
@@ -70,7 +68,7 @@
 import axios from 'axios';
 import { onMounted, ref, registerRuntimeCompiler } from 'vue';
 
-let username = ref();
+let username = ref('nureekdevell');
 
 let URL = 'https://api.github.com/users/';
 let results = ref(null);
