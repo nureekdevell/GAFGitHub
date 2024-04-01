@@ -11,6 +11,7 @@
 							style="height: 58px; width: 400px"
 							placeholder="User Nick"
 						/>
+
 						<button
 							@click="getInfoUsers"
 							class="px-7 py-3 md:px-9 md:py-4 bg-white font-medium md:font-semibold text-gray-700 text-md rounded-md hover:bg-gray-700 hover:text-white transition ease-linear duration-500"
@@ -54,7 +55,7 @@
 					</p>
 
 					<a
-						href="#"
+						href="https:/github.com"
 						class="px-7 py-3 md:px-9 md:py-4 font-medium md:font-semibold bg-gray-700 text-gray-50 text-sm rounded-md hover:bg-gray-50 hover:text-gray-700 transition ease-linear duration-500"
 						>Hire me</a
 					>
@@ -69,6 +70,7 @@ import axios from 'axios';
 import { onMounted, ref, registerRuntimeCompiler } from 'vue';
 
 let username = ref('nureekdevell');
+let loader = './assets/github-cat.gif';
 
 let URL = 'https://api.github.com/users/';
 let results = ref(null);

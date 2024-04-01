@@ -1,0 +1,22 @@
+
+
+	<header class="bg-[#F7F6F4] h-screen">
+		<div class="container flex justify-center items-center pt-5 gap-5">
+			<div>
+				<el-input
+					v-model="username"
+					style="width: 240px"
+					placeholder="User Nick"
+				/><el-button @click="getInfoUsers" type="danger">Search</el-button>
+			</div>
+			<div class="flex-col"> -->
+		<div v-if="results">
+					<img v-if="results.avatar_url" :src="results.avatar_url" />
+					<h1 v-if="results.name">{{ results.name }}</h1>
+					<i v-if="results.bio">{{ results.bio }}</i>
+					<p v-if="results.location">{{ results.location }}</p>
+				</div> 
+		 </div>
+		</div>
+	</header>
+</template>
